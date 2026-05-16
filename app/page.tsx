@@ -1,6 +1,12 @@
 import ExploreBtn from "@/components/ExploreBtn";
+import EventCard from "@/components/EventCard";
 
-const Home = () => {
+const events = [
+  {image: '/images/event1.png',title: 'Event 1'},
+  {image: '/images/event2.png',title: 'Event 2'},
+]
+
+const Page = () => {
   return (
     <section>
       <h1 className="text-center">The Hub for Every Dev  <br/>Event you should miss</h1>
@@ -12,12 +18,14 @@ const Home = () => {
         <h3>Featured Events</h3>
 
         <ul className="events">
-          {[1,2,3,4,5].map((event) => (
-              <li key={event}>Event {event}</li>
+          {events.map((event) => (
+              <li key={event.title}>
+              <EventCard {...event} />
+              </li>
           ))}
         </ul>
       </div>
     </section>
   )
 }
-export default Home
+export default Page
