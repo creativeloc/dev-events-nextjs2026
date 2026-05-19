@@ -1,14 +1,10 @@
 import ExploreBtn from "@/components/ExploreBtn";
 import EventCard from "@/components/EventCard";
-
-const events = [
-  {image: '/images/event1.png',title: 'Event 1'},
-  {image: '/images/event2.png',title: 'Event 2'},
-]
+import {events} from "@/lib/constants";
 
 const Page = () => {
   return (
-    <section>
+      <section>
       <h1 className="text-center">The Hub for Every Dev  <br/>Event you should miss</h1>
       <p className="text-center mt-5">Hackathons, Meetups, and Conferences, all in one place</p>
 
@@ -19,13 +15,13 @@ const Page = () => {
 
         <ul className="events">
           {events.map((event) => (
-              <li key={event.title}>
+              <li key={event.title} className="list-none">
               <EventCard {...event} />
               </li>
           ))}
         </ul>
       </div>
-    </section>
+      </section>
   )
 }
-export default Page
+export default Page;
